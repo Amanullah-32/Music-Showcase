@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block internal or non-public routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+
+Allow: /contact
+Allow: /courses
+
+# Sitemap (important for SEO)
+# Sitemap: https://yourdomain.com/sitemap.xml
