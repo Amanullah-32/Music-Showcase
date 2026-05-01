@@ -36,24 +36,28 @@ This website focuses on a high-end user experience, utilizing modern UI librarie
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/music-showcase.git](https://github.com/your-username/music-showcase.git)
+git clone https://github.com/Amanullah-32/Music-Showcase.git
+```
+```
 cd music-showcase
-
+```
 2. Install Dependencies
-Bash
+```Bash
 npm install
 # or
 yarn install
-
+```
 3. Set Up Environment Variables
 Create a .env.local file in the root directory and add your Resend credentials:
 
-Code snippet
+```Code snippet
 RESEND_API_KEY=re_your_api_key_here
 MY_MAIL=your-email@example.com
+```
 4. Run the Development Server
-Bash
+```Bash
 npm run dev
+```
 Open http://localhost:3000 to view your showcase.
 
 📧 Email Integration (Resend)
@@ -74,21 +78,27 @@ This project is fully "Dockerized," allowing you to run the entire showcase in a
 1. Build the Image
 Navigate to the project root and run:
 
-Bash
+### Before run Build command make sure 
+
+- output: "standalone"
+### In next.config.ts
+
+```Bash
 docker build -t music-showcase .
+```
 2. Run the Container with Environment Variables
 To keep your Resend API Key secure, you pass it at runtime using the -e flag. This allows anyone to run your project without hardcoding sensitive data.
 
-Bash
+```Bash
 docker run -p 3000:3000 \
   -e RESEND_API_KEY=your_resend_key_here \
   -e MY_MAil=your_email@example.com \
   music-showcase
-
+```
 OR
-
+```
 docker run -p 3000:3000 --env-file .env music-showcase
-
+```
 📄 License
 This project is licensed under the MIT License.
 
